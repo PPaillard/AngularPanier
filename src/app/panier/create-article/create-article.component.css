@@ -1,0 +1,4 @@
+#containerCreateArticle {
+  display: flex;
+  flex-direction: column;
+}

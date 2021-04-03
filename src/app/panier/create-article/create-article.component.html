@@ -1,0 +1,13 @@
+<div id="containerCreateArticle">
+    <label> Description
+        <input [(ngModel)]="description">
+    </label>
+    
+    <label>Prix
+        <input [(ngModel)]="prix">
+    </label>
+    <label>Quantité
+        <input [(ngModel)]="quantite">
+    </label> 
+    <button (click)="createAndSendArticle()">Créer l'article</button>
+</div>
