@@ -1,12 +1,15 @@
 <div *ngIf="panier.articles.length != 0; else panierVide">
-    <!-- Liste des articles -->
-    <div *ngFor="let item of panier.articles">
-        <app-article [article]="item"></app-article>
-    </div>
-    <hr>
-    Panier : {{panier.articles.length}} articles <br>
-    Prix Total : {{panier.getTotal() | number}}
+  <!-- Liste des articles -->
+  <div *ngFor="let item of panier.articles">
+    <app-article
+      [article]="item"
+      (articleToParent)="supprimerArticle($event)"
+    ></app-article>
+  </div>
+  <hr />
+  Panier : {{ panier.articles.length }} articles <br />
+  Prix Total : {{ panier.getTotal() | number }}
 </div>
 <ng-template #panierVide>Votre panier est vide.</ng-template>
-<hr>
+<hr />
 <app-create-article (sendArticle)="receiveArticle($event)"></app-create-article>

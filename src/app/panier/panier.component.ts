@@ -5,21 +5,22 @@ import { Panier } from '../common/panier.model';
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.component.html',
-  styleUrls: ['./panier.component.css']
+  styleUrls: ['./panier.component.css'],
 })
 export class PanierComponent implements OnInit {
-
   public panier: Panier;
 
-  constructor() { 
+  constructor() {
     this.panier = new Panier();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  receiveArticle($event:Article):void{
+  receiveArticle($event: Article): void {
     this.panier.ajouterArticle($event);
   }
 
+  supprimerArticle($event: Article): void {
+    this.panier.supprimerArticle($event);
+  }
 }

@@ -4,25 +4,25 @@ import { Article } from 'src/app/common/article.model';
 @Component({
   selector: 'app-create-article',
   templateUrl: './create-article.component.html',
-  styleUrls: ['./create-article.component.css']
+  styleUrls: ['./create-article.component.css'],
 })
 export class CreateArticleComponent implements OnInit {
   @Output() sendArticle: EventEmitter<Article> = new EventEmitter();
   description: string;
   prix: number;
   quantite: number;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  createAndSendArticle():void{
+  createAndSendArticle(): void {
+    // on envoit un nouvel article au parent
     this.sendArticle.emit(
       new Article(this.description, this.prix, this.quantite)
-    )
-    this.description = ""
-    this.prix = null
-    this.quantite = null
+    );
+    // on remet à Zero les champs
+    this.description = '';
+    this.prix = null;
+    this.quantite = null;
   }
-
 }
